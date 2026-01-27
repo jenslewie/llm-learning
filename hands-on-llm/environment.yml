@@ -1,0 +1,12 @@
+name: llm-learning-phi-3-mini
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - torch>=2.0.0
+    - accelerate
+    # Note: transformers version varies by chapter
+    # See individual chapter requirements.txt for specific versions
