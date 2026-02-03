@@ -8,5 +8,8 @@ dependencies:
   - pip:
     - torch>=2.0.0
     - accelerate
+    - gensim
+    - pandas
+    - sentence-transformers
     # Note: transformers version varies by chapter
     # See individual chapter requirements.txt for specific versions
