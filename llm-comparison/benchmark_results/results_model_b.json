@@ -1,0 +1,134 @@
+[
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q1",
+    "question": "把 1 到 1000 中，既能被 3 整除又不能被 5 整除的整数个数算出来。只输出最终数字。",
+    "gold": "267",
+    "pred": "1. 计算 1 到 1000 中能被 3 整除的数：$\\lfloor 1000/3 \\rfloor = 333$。\n2. 计算 1 到 1000 中既能被 3 整除又能被 5 整除的数（即能被 15 整除）：$\\lfloor 1000/15 \\rfloor = 66$。\n3. 既能被 3 整除又不能被 5 整除的数 = 能被 3 整除的数 - 能被 15 整除的数 = $333 - 66 = 267$。\n\n{\"final_answer\":\"267\"}",
+    "final_pred": "267",
+    "latency_sec": 2.2,
+    "pred_len": 227,
+    "final_pred_len": 3
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q2",
+    "question": "某商品先涨价 20%，再打 8 折，最后再涨价 25%。最终价格与原价相比是涨了、跌了还是不变？只回答“涨了X% / 跌了X% / 不变”。",
+    "gold": "涨了20%",
+    "pred": "设原价为 1。\n1. 先涨价 20%：$1 \\times (1 + 20\\%) = 1.2$\n2. 再打 8 折：$1.2 \\times 0.8 = 0.96$\n3. 最后再涨价 25%：$0.96 \\times (1 + 25\\%) = 0.96 \\times 1.25 = 1.2$\n\n最终价格 1.2 是原价 1 的 1.2 倍，即涨了 20%。\n\n{\"final_answer\":\"涨了20%\"}",
+    "final_pred": "涨了20%",
+    "latency_sec": 1.42,
+    "pred_len": 202,
+    "final_pred_len": 5
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q3",
+    "question": "A 比 B 大，B 比 C 大，C 不比 D 大。以下哪项一定为真？1. A 比 D 大 2. D 比 A 小 3. B 比 D 大 4. 无法确定。只输出选项编号。",
+    "gold": "4",
+    "pred": "{\"final_answer\":\"4\"}",
+    "final_pred": "4",
+    "latency_sec": 0.32,
+    "pred_len": 20,
+    "final_pred_len": 1
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q4",
+    "question": "5 个人排成一排，甲乙必须相邻，丙不能站两端。共有多少种排法？只输出数字。",
+    "gold": "24",
+    "pred": "18",
+    "final_pred": "18",
+    "latency_sec": 0.27,
+    "pred_len": 2,
+    "final_pred_len": 2
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q5",
+    "question": "有红、蓝、绿三种球各 4 个，从中任取 5 个。至少有 2 个同色是否必然成立？请只回答“是”或“否”，并给一句理由。",
+    "gold": "是",
+    "pred": "是，因为最坏情况是取到3种不同颜色的球各1个，第4个球必然与其中一种颜色重复，而取5个球时必然包含至少2个同色球。\n{\"final_answer\":\"是\"}",
+    "final_pred": "是",
+    "latency_sec": 0.66,
+    "pred_len": 78,
+    "final_pred_len": 1
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q6",
+    "question": "一个会议安排在周一到周五。已知：不在周一；如果在周三，则小王不能参加；小王必须参加；周五会议室关闭；周二主讲人出差。问会议只能安排在哪一天？只输出星期几。",
+    "gold": "周四",
+    "pred": "会议只能安排在周四。\n\n{\"final_answer\":\"周四\"}",
+    "final_pred": "周四",
+    "latency_sec": 0.36,
+    "pred_len": 33,
+    "final_pred_len": 2
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q7",
+    "question": "阅读下面 Python 代码，输出什么，只写最终输出内容：\n\ndef f(x, acc=[]):\n    acc.append(x)\n    return acc\n\nprint(f(1))\nprint(f(2))\nprint(f(3, []))\nprint(f(4))\n",
+    "gold": "[1]\n[1, 2]\n[3]\n[1, 2, 4]",
+    "pred": "[1]\n[1, 2]\n[4]\n[1, 2, 4]\n\n{\"final_answer\":\"[1]\\\\n[1, 2]\\\\n[4]\\\\n[1, 2, 4]\"}",
+    "final_pred": "[1]\\n[1, 2]\\n[4]\\n[1, 2, 4]",
+    "latency_sec": 0.69,
+    "pred_len": 75,
+    "final_pred_len": 27
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q8",
+    "question": "下面代码的时间复杂度是多少？只回答 O(...)。\n\ncount = 0\nfor i in range(n):\n    j = 1\n    while j < n:\n        count += 1\n        j *= 2\n",
+    "gold": "O(n log n)",
+    "pred": "O(n log n)\n{\"final_answer\":\"O(n log n)\"}",
+    "final_pred": "O(n log n)",
+    "latency_sec": 0.39,
+    "pred_len": 40,
+    "final_pred_len": 10
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q9",
+    "question": "下面函数想返回列表中第二大的不同元素，但有 bug。请指出 bug 本质，只用一句话回答。\n\ndef second_largest(nums):\n    nums.sort()\n    return nums[-2]\n",
+    "gold": "没有处理重复值",
+    "pred": "该函数未处理列表中存在重复元素导致第二大不同元素缺失的情况。\n\n{\"final_answer\":\"未处理重复元素导致第二大不同元素缺失\"}",
+    "final_pred": "未处理重复元素导致第二大不同元素缺失",
+    "latency_sec": 0.5,
+    "pred_len": 69,
+    "final_pred_len": 18
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q10",
+    "question": "一辆车从 A 到 B，去程速度 60，回程速度 40。求往返平均速度。只输出数字，不要解释。",
+    "gold": "48",
+    "pred": "48\n{\"final_answer\":\"48\"}",
+    "final_pred": "48",
+    "latency_sec": 0.34,
+    "pred_len": 24,
+    "final_pred_len": 2
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q11",
+    "question": "如果今天是星期二，那么从今天起第 100 天是星期几？只输出星期几。",
+    "gold": "星期四",
+    "pred": "{\"final_answer\":\"星期四\"}",
+    "final_pred": "星期四",
+    "latency_sec": 0.3,
+    "pred_len": 22,
+    "final_pred_len": 3
+  },
+  {
+    "model": "mlx-community/Qwen3.5-35B-A3B-4bit",
+    "qid": "q12",
+    "question": "有 8 升和 5 升两个空壶，以及无限水源。请问是否能精确量出 1 升？只回答“能/不能”，再给最短步骤。",
+    "gold": "能",
+    "pred": "能。步骤：1. 装满5升壶；2. 倒入8升壶；3. 装满5升壶；4. 倒入8升壶直至满（此时5升壶剩2升）；5. 倒空8升壶；6. 将5升壶中的2升倒入8升壶；7. 装满5升壶；8. 倒入8升壶直至满（此时5升壶剩1升）。\n\n{\"final_answer\":\"能\"}",
+    "final_pred": "能",
+    "latency_sec": 1.07,
+    "pred_len": 133,
+    "final_pred_len": 1
+  }
+]
