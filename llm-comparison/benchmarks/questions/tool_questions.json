@@ -1,0 +1,148 @@
+{
+  "name": "tool_benchmark_draft",
+  "version": "v1",
+  "description": "8题工具使用能力题库草案，覆盖工具选择、参数构造、多步调用、结果整合与失败恢复。",
+  "scoring_profile": "tool_scoring_v1",
+  "questions": [
+    {
+      "id": "tq01",
+      "category": "calculator",
+      "evaluation_type": "tool_use",
+      "task": "使用计算器工具计算 (287 * 913 - 17451) / 7，并只输出最终数字。",
+      "allowed_tools": [
+        "calculator"
+      ],
+      "expected_tool_sequence": [
+        "calculator"
+      ],
+      "gold": "34940",
+      "scoring_rule": "single_tool_objective"
+    },
+    {
+      "id": "tq02",
+      "category": "file_search",
+      "evaluation_type": "tool_use",
+      "task": "在本地项目目录里找到包含字符串 PAYMENT_TIMEOUT_MS 的配置文件，并输出它所在文件路径与对应值。",
+      "allowed_tools": [
+        "file_search",
+        "file_read"
+      ],
+      "expected_tool_sequence": [
+        "file_search",
+        "file_read"
+      ],
+      "gold_keywords": [
+        "config/app.env",
+        "15000"
+      ],
+      "scoring_rule": "tool_trace_plus_answer"
+    },
+    {
+      "id": "tq03",
+      "category": "structured_data",
+      "evaluation_type": "tool_use",
+      "task": "调用 JSON 查询工具，从订单列表中找出 status 为 delayed 且 amount 最大的一笔订单，只输出订单号。",
+      "allowed_tools": [
+        "json_query"
+      ],
+      "expected_tool_sequence": [
+        "json_query"
+      ],
+      "gold": "ORD-9003",
+      "scoring_rule": "single_tool_objective"
+    },
+    {
+      "id": "tq04",
+      "category": "api_lookup",
+      "evaluation_type": "tool_use",
+      "task": "调用 mock API 查询工单 T-1042 的状态，并根据返回结果写一句不超过 30 字的中文进展说明。",
+      "allowed_tools": [
+        "http_request"
+      ],
+      "expected_tool_sequence": [
+        "http_request"
+      ],
+      "gold_keywords": [
+        "T-1042",
+        "阻塞"
+      ],
+      "scoring_rule": "tool_trace_plus_answer"
+    },
+    {
+      "id": "tq05",
+      "category": "multi_step",
+      "evaluation_type": "tool_use",
+      "task": "先读取项目配置中的数据库连接信息，再调用数据库查询工具统计昨日新增用户数，最后输出一个 JSON：{\"db\":\"...\",\"new_users\":数字}。",
+      "allowed_tools": [
+        "file_read",
+        "db_query"
+      ],
+      "expected_tool_sequence": [
+        "file_read",
+        "db_query"
+      ],
+      "gold_json": {
+        "db": "analytics",
+        "new_users": 128
+      },
+      "scoring_rule": "tool_trace_plus_json"
+    },
+    {
+      "id": "tq06",
+      "category": "recovery",
+      "evaluation_type": "tool_use",
+      "task": "这是一个失败恢复题。你第一次调用工具时，日期字段名会出错并导致失败；请根据错误信息修正参数，然后重新获取 2026-04-01 的销售额，只输出数字。",
+      "allowed_tools": [
+        "sales_report_api"
+      ],
+      "expected_tool_sequence": [
+        "sales_report_api",
+        "sales_report_api"
+      ],
+      "force_first_tool_argument_error": {
+        "tool_name": "sales_report_api",
+        "source_key": "date",
+        "wrong_key": "day",
+        "fallback_value": "2026-04-01"
+      },
+      "gold": "128700",
+      "scoring_rule": "recovery_required"
+    },
+    {
+      "id": "tq07",
+      "category": "selection",
+      "evaluation_type": "tool_use",
+      "task": "判断下面任务是否必须使用工具：'把 9973 是否为质数判断出来。' 若需要请调用工具；若不需要请直接回答，并说明原因。",
+      "allowed_tools": [
+        "calculator",
+        "python_runner"
+      ],
+      "expected_capability": "tool_necessity_judgment",
+      "tool_required": false,
+      "gold_keywords": [
+        "质数"
+      ],
+      "scoring_rule": "tool_selection_judgment"
+    },
+    {
+      "id": "tq08",
+      "category": "reporting",
+      "evaluation_type": "tool_use",
+      "task": "调用搜索工具查找三个日志文件中的 error 数量，再生成一段两句中文总结，指出哪个文件最严重。",
+      "allowed_tools": [
+        "file_search",
+        "log_counter"
+      ],
+      "expected_tool_sequence": [
+        "file_search",
+        "log_counter"
+      ],
+      "gold_keywords": [
+        "web.log",
+        "3",
+        "最严重"
+      ],
+      "scoring_rule": "tool_trace_plus_report"
+    }
+  ]
+}

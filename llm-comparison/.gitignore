@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+notebook/.ipynb_checkpoints/
+notebook/legacy_results/.ipynb_checkpoints/
+
+obsolete/
+benchmark_results/*
+!benchmark_results/five_models_20260406/
+!benchmark_results/five_models_20260406/**

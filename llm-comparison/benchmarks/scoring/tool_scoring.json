@@ -1,0 +1,110 @@
+{
+  "name": "tool_scoring_v1",
+  "description": "工具使用能力评分规则草案。重点衡量工具选择、参数正确性、多步调用、异常恢复和端到端完成率。",
+  "aggregation": {
+    "completion_weight": 0.4,
+    "tool_usage_weight": 0.4,
+    "efficiency_weight": 0.2,
+    "report_dimensions": [
+      "tool_selection_accuracy",
+      "tool_call_success_rate",
+      "parameter_accuracy",
+      "recovery_rate",
+      "avg_tool_calls",
+      "unnecessary_tool_calls",
+      "end_to_end_success_rate"
+    ]
+  },
+  "rules": {
+    "single_tool_objective": {
+      "score_range": [
+        0,
+        5
+      ],
+      "subscores": {
+        "used_expected_tool": 1,
+        "parameter_valid": 1,
+        "tool_call_success": 1,
+        "final_answer_correct": 2
+      }
+    },
+    "tool_trace_plus_answer": {
+      "score_range": [
+        0,
+        5
+      ],
+      "subscores": {
+        "tool_sequence_reasonable": 1,
+        "parameter_valid": 1,
+        "tool_result_used_correctly": 1,
+        "final_answer_correct": 2
+      }
+    },
+    "tool_trace_plus_json": {
+      "score_range": [
+        0,
+        6
+      ],
+      "subscores": {
+        "tool_sequence_reasonable": 1,
+        "parameter_valid": 1,
+        "json_valid": 1,
+        "json_fields_complete": 1,
+        "content_correct": 2
+      }
+    },
+    "recovery_required": {
+      "score_range": [
+        0,
+        6
+      ],
+      "subscores": {
+        "attempted_tool_call": 1,
+        "recognized_failure": 1,
+        "recovered_with_correct_params": 2,
+        "final_answer_correct": 2
+      }
+    },
+    "tool_selection_judgment": {
+      "score_range": [
+        0,
+        5
+      ],
+      "subscores": {
+        "judged_need_for_tool_correctly": 2,
+        "if_used_tool_then_reasonable": 1,
+        "final_answer_correct": 2
+      }
+    },
+    "tool_trace_plus_report": {
+      "score_range": [
+        0,
+        5
+      ],
+      "subscores": {
+        "used_required_tools": 1,
+        "counts_correct": 2,
+        "summary_uses_tool_results": 1,
+        "report_clear": 1
+      }
+    }
+  },
+  "trace_fields": [
+    "tool_name",
+    "arguments",
+    "call_started_at",
+    "call_finished_at",
+    "success",
+    "error_message",
+    "output_excerpt"
+  ],
+  "recommended_run_metrics": [
+    "tool_selection_accuracy",
+    "tool_call_success_rate",
+    "parameter_accuracy",
+    "recovery_rate",
+    "avg_tool_calls_per_task",
+    "end_to_end_success_rate",
+    "avg_latency_sec"
+  ]
+}

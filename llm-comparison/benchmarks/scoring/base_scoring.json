@@ -1,0 +1,180 @@
+{
+  "name": "base_scoring_v1",
+  "description": "综合能力题库评分规则草案。客观题优先程序判分，主观题使用统一 rubric。",
+  "aggregation": {
+    "objective_weight": 0.7,
+    "rubric_weight": 0.3,
+    "report_dimensions": [
+      "math",
+      "code",
+      "long_context",
+      "information_extraction",
+      "instruction_following",
+      "grounded_qa",
+      "rewrite",
+      "practical_writing"
+    ]
+  },
+  "objective_rules": {
+    "exact_match": {
+      "type": "string_exact_match",
+      "score_range": [
+        0,
+        1
+      ]
+    },
+    "multiline_exact_match": {
+      "type": "normalized_multiline_match",
+      "score_range": [
+        0,
+        1
+      ]
+    },
+    "complexity_alias_match": {
+      "type": "normalized_alias_match",
+      "accepted_aliases_example": [
+        "O(n^2)",
+        "O(n*n)"
+      ],
+      "score_range": [
+        0,
+        1
+      ]
+    },
+    "contains_any_keyword": {
+      "type": "keyword_match",
+      "logic": "any",
+      "score_range": [
+        0,
+        1
+      ]
+    },
+    "json_field_exact": {
+      "type": "json_field_match",
+      "subscores": {
+        "valid_json": 1,
+        "required_fields_complete": 1,
+        "field_values_exact": 1
+      },
+      "score_range": [
+        0,
+        3
+      ]
+    },
+    "constraint_check": {
+      "type": "constraint_based",
+      "subscores": {
+        "length_ok": 1,
+        "format_ok": 1,
+        "content_coverage_ok": 1
+      },
+      "score_range": [
+        0,
+        3
+      ]
+    },
+    "grounded_binary": {
+      "type": "grounded_answer_check",
+      "subscores": {
+        "answer_correct": 1,
+        "reason_grounded": 1,
+        "no_hallucination": 1
+      },
+      "score_range": [
+        0,
+        3
+      ]
+    }
+  },
+  "rubrics": {
+    "summary_quality_5": {
+      "score_range": [
+        0,
+        5
+      ],
+      "dimensions": [
+        "核心信息覆盖",
+        "压缩与取舍",
+        "结构清晰度",
+        "无明显编造"
+      ],
+      "anchors": {
+        "5": "覆盖核心信息，摘要紧凑清楚，关键词准确，无明显遗漏或编造。",
+        "4": "基本完整，存在轻微遗漏或表达不够凝练，但不影响理解。",
+        "3": "完成任务，但遗漏明显或结构一般，信息压缩效果普通。",
+        "2": "部分完成，核心点缺失较多或有偏题。",
+        "1": "完成度很低，内容混乱或严重遗漏。",
+        "0": "未完成任务或严重跑题。"
+      }
+    },
+    "recommendation_quality_5": {
+      "score_range": [
+        0,
+        5
+      ],
+      "dimensions": [
+        "结论明确",
+        "理由充分",
+        "约束意识",
+        "表达简洁"
+      ],
+      "anchors": {
+        "5": "建议明确，能抓住资源约束和商业价值，理由完整且简洁。",
+        "4": "建议基本合理，有少量理由不足或表达稍弱。",
+        "3": "结论可用，但论证力度一般或遗漏关键约束。",
+        "2": "结论模糊或理由较弱，实用性有限。",
+        "1": "建议明显不完整或偏题。",
+        "0": "未完成任务。"
+      }
+    },
+    "rewrite_quality_5": {
+      "score_range": [
+        0,
+        5
+      ],
+      "dimensions": [
+        "保留原意",
+        "正式语气",
+        "信息完整",
+        "长度控制"
+      ],
+      "anchors": {
+        "5": "原意完整保留，语气正式自然，可直接发送。",
+        "4": "基本达标，存在轻微措辞或完整性问题。",
+        "3": "能表达主要意思，但正式度或信息保留一般。",
+        "2": "改写不够得体，遗漏关键信息。",
+        "1": "明显偏离原意或完成度低。",
+        "0": "未完成任务。"
+      }
+    },
+    "business_writing_5": {
+      "score_range": [
+        0,
+        5
+      ],
+      "dimensions": [
+        "关键信息完整",
+        "语气得体",
+        "行动要求明确",
+        "结构清晰"
+      ],
+      "anchors": {
+        "5": "关键信息完整，语气专业，行动要求清楚，结构简洁可直接使用。",
+        "4": "基本可用，存在轻微信息或表达不足。",
+        "3": "完成任务但较普通，结构或语气一般。",
+        "2": "缺少关键要求或表达不适合场景。",
+        "1": "完成度低，实用性弱。",
+        "0": "未完成任务。"
+      }
+    }
+  },
+  "extra_metrics": [
+    "format_success_rate",
+    "first_pass_success_rate",
+    "hallucination_rate",
+    "avg_latency_sec",
+    "cold_start_prefill_sec",
+    "steady_state_avg_prefill_sec",
+    "weighted_prompt_tps"
+  ]
+}

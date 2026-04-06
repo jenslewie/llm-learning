@@ -1,0 +1,4 @@
+INFO boot ok
+ERROR payment timeout
+INFO retrying request
+ERROR payment timeout

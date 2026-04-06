@@ -1,0 +1,218 @@
+{
+  "name": "base_benchmark_draft",
+  "version": "v1",
+  "description": "16题综合能力题库草案，覆盖数学、代码、长文理解、信息抽取、指令遵循、材料约束问答、改写与实用写作。",
+  "scoring_profile": "base_scoring_v1",
+  "questions": [
+    {
+      "id": "bq01",
+      "category": "math",
+      "evaluation_type": "objective",
+      "prompt": "一个仓库有 120 箱货物。第一天卖出总数的 25%，第二天卖出剩余的 20%，第三天补进 18 箱。现在仓库里还有多少箱？只输出最终数字。",
+      "output_contract": "最后一行输出 {\"final_answer\":\"数字\"}",
+      "gold": "90",
+      "scoring_rule": "exact_match"
+    },
+    {
+      "id": "bq02",
+      "category": "math",
+      "evaluation_type": "objective",
+      "prompt": "某人投资 10000 元，先亏损 10%，再上涨 25%。最终相对于本金是盈利、亏损还是持平？只回答“盈利X% / 亏损X% / 持平”。",
+      "output_contract": "最后一行输出 {\"final_answer\":\"答案\"}",
+      "gold": "盈利12.5%",
+      "scoring_rule": "exact_match"
+    },
+    {
+      "id": "bq03",
+      "category": "math",
+      "evaluation_type": "objective",
+      "prompt": "有 7 本不同的书排成一排，其中甲乙丙三本必须相邻且顺序固定为“甲乙丙”。共有多少种排法？只输出数字。",
+      "output_contract": "最后一行输出 {\"final_answer\":\"数字\"}",
+      "gold": "120",
+      "scoring_rule": "exact_match"
+    },
+    {
+      "id": "bq04",
+      "category": "code",
+      "evaluation_type": "objective",
+      "prompt": "阅读下面 Python 代码，写出最终输出内容，只写完整输出，不要解释。\n\nx = [1, 2]\ny = x\nx += [3]\nprint(x)\nprint(y)\n",
+      "output_contract": "最后一行输出 {\"final_answer\":\"完整输出，保留换行\"}",
+      "gold": "[1, 2, 3]\n[1, 2, 3]",
+      "scoring_rule": "multiline_exact_match"
+    },
+    {
+      "id": "bq05",
+      "category": "code",
+      "evaluation_type": "objective",
+      "prompt": "下面代码的时间复杂度是多少？只回答 O(...)。\n\nfor i in range(n):\n    for j in range(i, n):\n        do_something()\n",
+      "output_contract": "最后一行输出 {\"final_answer\":\"O(...)\"}",
+      "gold": "O(n^2)",
+      "scoring_rule": "complexity_alias_match"
+    },
+    {
+      "id": "bq06",
+      "category": "code",
+      "evaluation_type": "objective",
+      "prompt": "下面函数本意是返回字符串中出现次数最多的字符，但有 bug。请只用一句话指出 bug 本质。\n\ndef most_common_char(s):\n    counts = {}\n    for ch in s:\n        counts[ch] = 1\n    return max(counts, key=counts.get)\n",
+      "output_contract": "最后一行输出 {\"final_answer\":\"一句话\"}",
+      "gold_keywords": [
+        "没有累加",
+        "未累加",
+        "重置计数",
+        "赋值为1"
+      ],
+      "scoring_rule": "contains_any_keyword"
+    },
+    {
+      "id": "bq07",
+      "category": "long_context",
+      "evaluation_type": "rubric",
+      "prompt": "阅读材料并完成摘要。\n\n材料：\n某市计划在未来三年推进老旧小区改造，共涉及 120 个小区，重点包括加装电梯、管线更新、屋顶防水和公共空间适老化改造。市住建部门表示，资金将由财政补贴、居民分摊和社会资本共同承担，其中低收入家庭可申请专项减免。试点阶段发现，居民最关心的是施工噪音、停车位减少以及电梯后续维护费用。为此，政府要求施工单位分时段作业，街道办负责协调临时停车资源，并建立电梯维护公示制度。专家认为，这项计划不仅改善居住条件，也有助于带动社区服务、养老配套和周边消费。\n\n任务：\n1. 用 3 句话做摘要。\n2. 再列出 4 个关键词。",
+      "output_contract": "最后一行输出 {\"final_answer\":\"摘要与关键词\"}",
+      "rubric_id": "summary_quality_5",
+      "anchor_points": [
+        "三年",
+        "120个小区",
+        "资金来源",
+        "居民关注噪音停车维护",
+        "带动社区服务和养老配套"
+      ]
+    },
+    {
+      "id": "bq08",
+      "category": "long_context",
+      "evaluation_type": "rubric",
+      "prompt": "阅读材料后回答。\n\n材料：\n一家创业公司原本计划同时做面向 C 端的效率工具和面向企业的协作平台，但团队只有 18 个人，现金流只够维持 14 个月。产品负责人发现，C 端用户增长快但付费率低，企业客户成交慢但客单价高，且已有 6 家中型企业愿意进入试点。技术负责人担心双线开发会拖慢交付，销售负责人则认为企业市场更有机会建立壁垒。CEO 要求团队在两周内决定未来 12 个月的主航道，并给出理由。\n\n任务：\n请用不超过 120 字给 CEO 写一段建议，说明应该聚焦哪条路线以及为什么。",
+      "output_contract": "最后一行输出 {\"final_answer\":\"建议文本\"}",
+      "rubric_id": "recommendation_quality_5",
+      "anchor_points": [
+        "聚焦企业路线",
+        "资源有限",
+        "试点客户已存在",
+        "客单价更高",
+        "避免双线开发"
+      ]
+    },
+    {
+      "id": "bq09",
+      "category": "information_extraction",
+      "evaluation_type": "objective",
+      "prompt": "从下面材料中抽取结构化信息，只输出 JSON。\n\n材料：\n星河科技于 2026 年 3 月 18 日发布公告称，公司将以 2.4 亿元收购智脉数据 60% 股权。本次交易完成后，智脉数据将继续独立运营，原 CEO 林澈留任三年。公告同时提示，该交易仍需监管审批，存在不确定性。\n\n输出字段：company, date, target, amount_cny, stake_ratio, risk",
+      "output_contract": "最后一行输出 {\"final_answer\":{...}} 或直接在 final_answer 中放字符串化 JSON",
+      "gold_json": {
+        "company": "星河科技",
+        "date": "2026-03-18",
+        "target": "智脉数据",
+        "amount_cny": "2.4亿元",
+        "stake_ratio": "60%",
+        "risk": "需监管审批，存在不确定性"
+      },
+      "scoring_rule": "json_field_exact"
+    },
+    {
+      "id": "bq10",
+      "category": "information_extraction",
+      "evaluation_type": "objective",
+      "prompt": "从下面客服对话中提取工单信息，只输出 JSON。\n\n对话：\n用户：我昨天买的空气炸锅今天一开机就报 E3，订单号是 A20260405017。\n客服：请问您希望换货、退货还是维修？\n用户：我想先换货，如果没货再退。\n客服：好的，您的收货城市是苏州，对吗？\n用户：对。\n\n输出字段：order_id, product, issue, preferred_resolution, fallback_resolution, city",
+      "output_contract": "最后一行输出 {\"final_answer\":{...}} 或直接在 final_answer 中放字符串化 JSON",
+      "gold_json": {
+        "order_id": "A20260405017",
+        "product": "空气炸锅",
+        "issue": "开机报E3",
+        "preferred_resolution": "换货",
+        "fallback_resolution": "退货",
+        "city": "苏州"
+      },
+      "scoring_rule": "json_field_exact"
+    },
+    {
+      "id": "bq11",
+      "category": "instruction_following",
+      "evaluation_type": "objective",
+      "prompt": "严格按要求输出：只输出一个 JSON 对象，字段必须是 status, priority, owner。内容分别填 done, high, ops。不要输出解释，不要输出 markdown。",
+      "output_contract": "最后一行输出 {\"final_answer\":{...}} 或直接在 final_answer 中放字符串化 JSON",
+      "gold_json": {
+        "status": "done",
+        "priority": "high",
+        "owner": "ops"
+      },
+      "scoring_rule": "json_field_exact"
+    },
+    {
+      "id": "bq12",
+      "category": "instruction_following",
+      "evaluation_type": "objective",
+      "prompt": "请用恰好 12 个汉字总结下面内容，不要使用标点，不要换行：公司决定把原定 6 月上线的新结算系统延期到 7 月，以便完成额外安全审计。",
+      "output_contract": "最后一行输出 {\"final_answer\":\"12个汉字\"}",
+      "gold_constraints": {
+        "exact_length_chars": 12,
+        "forbid_punctuation": true,
+        "must_cover": [
+          "结算系统",
+          "延期",
+          "安全审计"
+        ]
+      },
+      "scoring_rule": "constraint_check"
+    },
+    {
+      "id": "bq13",
+      "category": "grounded_qa",
+      "evaluation_type": "objective",
+      "prompt": "只能依据下面材料回答，不能补充材料外信息。\n\n材料：\n蓝杉书店营业时间为周二至周日 10:00-21:00，周一闭店。每周三 18:00-20:00 二楼活动区会举办读书会，因此该时段不提供安静自习座位。会员借书上限为 6 本，普通顾客为 2 本。\n\n问题：周一晚上 7 点能去蓝杉书店借 4 本书吗？请只回答“能/不能 + 一句话原因”。",
+      "output_contract": "最后一行输出 {\"final_answer\":\"答案\"}",
+      "gold_keywords": [
+        "不能",
+        "周一",
+        "闭店"
+      ],
+      "forbidden_hallucinations": [
+        "预约",
+        "押金",
+        "节假日"
+      ],
+      "scoring_rule": "grounded_binary"
+    },
+    {
+      "id": "bq14",
+      "category": "grounded_qa",
+      "evaluation_type": "objective",
+      "prompt": "只能依据下面材料回答，不能补充材料外信息。\n\n材料：\n某公司差旅制度规定：高铁二等座默认可报销；飞行时长超过 4 小时可申请经济舱全价票；住宿标准一线城市每晚不超过 700 元，二线城市不超过 500 元；打车需说明事由，普通市内通勤原则上使用公共交通。已知成都属于二线城市。\n\n问题：去成都出差住 620 元一晚的酒店，按制度能直接报销吗？只回答“能/不能 + 一句话原因”。",
+      "output_contract": "最后一行输出 {\"final_answer\":\"答案\"}",
+      "gold_keywords": [
+        "不能",
+        "二线城市",
+        "500"
+      ],
+      "scoring_rule": "grounded_binary"
+    },
+    {
+      "id": "bq15",
+      "category": "rewrite",
+      "evaluation_type": "rubric",
+      "prompt": "把下面这段话改写成更正式、适合发给客户的版本，要求保留原意，不超过 80 字。\n\n原文：\n我们这边发现接口还有点问题，今天可能来不及了，麻烦你们再等等，我们修好了第一时间通知。",
+      "output_contract": "最后一行输出 {\"final_answer\":\"改写结果\"}",
+      "rubric_id": "rewrite_quality_5",
+      "anchor_points": [
+        "接口问题",
+        "无法今日完成",
+        "请客户等待",
+        "修复后立即通知"
+      ]
+    },
+    {
+      "id": "bq16",
+      "category": "practical_writing",
+      "evaluation_type": "rubric",
+      "prompt": "写一封简短内部邮件，通知团队：原定周三发布的版本延期到周五，原因是发现支付流程存在高优先级缺陷；请开发和测试团队今天内完成修复与回归。控制在 150 字以内。",
+      "output_contract": "最后一行输出 {\"final_answer\":\"邮件正文\"}",
+      "rubric_id": "business_writing_5",
+      "anchor_points": [
+        "版本延期到周五",
+        "支付流程高优缺陷",
+        "开发测试今天内完成",
+        "内部通知语气"
+      ]
+    }
+  ]
+}
