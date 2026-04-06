@@ -1,7 +1,7 @@
 [
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -26,7 +26,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -51,7 +51,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -76,7 +76,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -101,7 +101,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -126,7 +126,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -151,7 +151,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -176,7 +176,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -201,7 +201,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -226,7 +226,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -251,7 +251,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -276,7 +276,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -301,7 +301,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -326,7 +326,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -351,7 +351,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,
@@ -376,7 +376,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "model": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
     "backend": "mlx_lm",
     "enable_thinking": false,

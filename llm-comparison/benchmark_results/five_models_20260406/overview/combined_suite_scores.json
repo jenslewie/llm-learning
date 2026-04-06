@@ -1,7 +1,7 @@
 [
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "backend": "mlx_vlm",
     "classic12_score": "12/12",
     "classic12_rate": 1.0,
@@ -16,7 +16,7 @@
   },
   {
     "model_id": "qwen35_27b_opus_distilled",
-    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+    "model_label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
     "backend": "mlx_lm",
     "classic12_score": "12/12",
     "classic12_rate": 1.0,
@@ -31,7 +31,7 @@
   },
   {
     "model_id": "gemma4_26b_a4b",
-    "model_label": "Gemma-4-26B-A4B",
+    "model_label": "Gemma-4-26B-A4B (4bit)",
     "backend": "mlx_vlm",
     "classic12_score": "10/12",
     "classic12_rate": 0.8333,
@@ -46,7 +46,7 @@
   },
   {
     "model_id": "qwen35_27b_6bit",
-    "model_label": "Qwen3.5-27B-6bit",
+    "model_label": "Qwen3.5-27B (6bit)",
     "backend": "mlx_lm",
     "classic12_score": "9/12",
     "classic12_rate": 0.75,
@@ -61,7 +61,7 @@
   },
   {
     "model_id": "qwen35_35b_a3b",
-    "model_label": "Qwen3.5-35B-A3B",
+    "model_label": "Qwen3.5-35B-A3B (4bit)",
     "backend": "mlx_lm",
     "classic12_score": "9/12",
     "classic12_rate": 0.75,

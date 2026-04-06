@@ -1,6 +1,6 @@
 model_id,model_label,model,backend,enable_thinking,auto_scored_questions,correct_count,full_score_count,objective_score_sum,objective_max_score,objective_score_rate,avg_latency_sec,avg_final_pred_len,avg_prefill_sec,avg_generation_tps,cold_start_qid,cold_start_prefill_sec,cold_start_prompt_tps,steady_state_avg_prefill_sec,steady_state_avg_prompt_tps,steady_state_avg_generation_tps,weighted_prompt_tps
-gemma4_26b_a4b,Gemma-4-26B-A4B,mlx-community/gemma-4-26b-a4b-it-4bit,mlx_vlm,False,12,6,11,23,24,0.9583,1.97,54.6,1.1977,100.1189,bq01,16.1924,8.399,0.1981,844.6941,100.4209,140.2652
-gemma4_31b,Gemma-4-31B,mlx-community/gemma-4-31b-it-4bit,mlx_vlm,False,12,6,11,22,24,0.9167,4.86,53.8,1.1458,25.1261,bq01,3.5764,38.0275,0.9837,171.7604,25.1378,146.6288
-qwen35_35b_a3b,Qwen3.5-35B-A3B,mlx-community/Qwen3.5-35B-A3B-4bit,mlx_lm,False,12,4,8,20,24,0.8333,1.02,39.2,0.2646,92.6513,bq01,1.4096,93.6427,0.1882,857.6255,92.2075,612.3172
-qwen35_27b_6bit,Qwen3.5-27B-6bit,mlx-community/Qwen3.5-27B-6bit,mlx_lm,False,12,4,8,19,24,0.7917,4.06,50.9,1.0454,19.9056,bq01,2.337,56.4823,0.9593,170.8544,19.8084,155.3196
-qwen35_27b_opus_distilled,Qwen3.5-27B Claude-4.6 Opus Distilled,mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit,mlx_lm,False,12,6,10,18,24,0.75,23.73,49.4,1.1286,25.9776,bq01,0.9557,137.0739,1.1402,147.1337,25.888,142.6507
+gemma4_26b_a4b,Gemma-4-26B-A4B (4bit),mlx-community/gemma-4-26b-a4b-it-4bit,mlx_vlm,False,12,6,11,23,24,0.9583,1.97,54.6,1.1977,100.1189,bq01,16.1924,8.399,0.1981,844.6941,100.4209,140.2652
+gemma4_31b,Gemma-4-31B (4bit),mlx-community/gemma-4-31b-it-4bit,mlx_vlm,False,12,6,11,22,24,0.9167,4.86,53.8,1.1458,25.1261,bq01,3.5764,38.0275,0.9837,171.7604,25.1378,146.6288
+qwen35_35b_a3b,Qwen3.5-35B-A3B (4bit),mlx-community/Qwen3.5-35B-A3B-4bit,mlx_lm,False,12,4,8,20,24,0.8333,1.02,39.2,0.2646,92.6513,bq01,1.4096,93.6427,0.1882,857.6255,92.2075,612.3172
+qwen35_27b_6bit,Qwen3.5-27B (6bit),mlx-community/Qwen3.5-27B-6bit,mlx_lm,False,12,4,8,19,24,0.7917,4.06,50.9,1.0454,19.9056,bq01,2.337,56.4823,0.9593,170.8544,19.8084,155.3196
+qwen35_27b_opus_distilled,Qwen3.5-27B Claude-4.6 Opus Distilled (4bit),mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit,mlx_lm,False,12,6,10,18,24,0.75,23.73,49.4,1.1286,25.9776,bq01,0.9557,137.0739,1.1402,147.1337,25.888,142.6507

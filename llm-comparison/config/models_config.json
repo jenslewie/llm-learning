@@ -2,7 +2,7 @@
   "models": [
     {
       "id": "qwen35_27b_opus_distilled",
-      "label": "Qwen3.5-27B Claude-4.6 Opus Distilled",
+      "label": "Qwen3.5-27B Claude-4.6 Opus Distilled (4bit)",
       "model_name": "mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
       "backend": "mlx_lm",
       "max_tokens": 2048,
@@ -10,7 +10,7 @@
     },
     {
       "id": "qwen35_35b_a3b",
-      "label": "Qwen3.5-35B-A3B",
+      "label": "Qwen3.5-35B-A3B (4bit)",
       "model_name": "mlx-community/Qwen3.5-35B-A3B-4bit",
       "backend": "mlx_lm",
       "max_tokens": 256,
@@ -18,7 +18,7 @@
     },
     {
       "id": "qwen35_27b_6bit",
-      "label": "Qwen3.5-27B-6bit",
+      "label": "Qwen3.5-27B (6bit)",
       "model_name": "mlx-community/Qwen3.5-27B-6bit",
       "backend": "mlx_lm",
       "max_tokens": 256,
@@ -26,7 +26,7 @@
     },
     {
       "id": "gemma4_26b_a4b",
-      "label": "Gemma-4-26B-A4B",
+      "label": "Gemma-4-26B-A4B (4bit)",
       "model_name": "mlx-community/gemma-4-26b-a4b-it-4bit",
       "backend": "mlx_vlm",
       "max_tokens": 256,
@@ -34,7 +34,7 @@
     },
     {
       "id": "gemma4_31b",
-      "label": "Gemma-4-31B",
+      "label": "Gemma-4-31B (4bit)",
       "model_name": "mlx-community/gemma-4-31b-it-4bit",
       "backend": "mlx_vlm",
       "max_tokens": 256,

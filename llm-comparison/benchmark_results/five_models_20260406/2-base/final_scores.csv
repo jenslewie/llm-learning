@@ -1,6 +1,6 @@
 model_id,model_label,backend,objective_score_sum,objective_max_score,rubric_score_sum,rubric_max_score,total_score,total_max_score,total_score_rate,objective_score_rate,avg_latency_sec,weighted_prompt_tps
-gemma4_26b_a4b,Gemma-4-26B-A4B,mlx_vlm,23,24,19,20,42,44,0.9545,0.9583,1.97,140.2652
-gemma4_31b,Gemma-4-31B,mlx_vlm,22,24,20,20,42,44,0.9545,0.9167,4.86,146.6288
-qwen35_27b_6bit,Qwen3.5-27B-6bit,mlx_lm,19,24,20,20,39,44,0.8864,0.7917,4.06,155.3196
-qwen35_27b_opus_distilled,Qwen3.5-27B Claude-4.6 Opus Distilled,mlx_lm,18,24,19,20,37,44,0.8409,0.75,23.73,142.6507
-qwen35_35b_a3b,Qwen3.5-35B-A3B,mlx_lm,20,24,11,20,31,44,0.7045,0.8333,1.02,612.3172
+gemma4_26b_a4b,Gemma-4-26B-A4B (4bit),mlx_vlm,23,24,19,20,42,44,0.9545,0.9583,1.97,140.2652
+gemma4_31b,Gemma-4-31B (4bit),mlx_vlm,22,24,20,20,42,44,0.9545,0.9167,4.86,146.6288
+qwen35_27b_6bit,Qwen3.5-27B (6bit),mlx_lm,19,24,20,20,39,44,0.8864,0.7917,4.06,155.3196
+qwen35_27b_opus_distilled,Qwen3.5-27B Claude-4.6 Opus Distilled (4bit),mlx_lm,18,24,19,20,37,44,0.8409,0.75,23.73,142.6507
+qwen35_35b_a3b,Qwen3.5-35B-A3B (4bit),mlx_lm,20,24,11,20,31,44,0.7045,0.8333,1.02,612.3172

@@ -1,6 +1,6 @@
 model_id,model_label,backend,classic12_score,classic12_rate,classic12_avg_latency_sec,base_score,base_rate,base_avg_latency_sec,tool_score,tool_rate,tool_avg_latency_sec,overall_mean_rate
-gemma4_31b,Gemma-4-31B,mlx_vlm,12/12,1.0,4.47,42/44,0.9545,4.86,39/42,0.9286,10.64,0.961
-qwen35_27b_opus_distilled,Qwen3.5-27B Claude-4.6 Opus Distilled,mlx_lm,12/12,1.0,19.38,37/44,0.8409,23.73,38/42,0.9048,23.89,0.9152
-gemma4_26b_a4b,Gemma-4-26B-A4B,mlx_vlm,10/12,0.8333,1.5,42/44,0.9545,1.97,32/42,0.7619,2.5,0.8499
-qwen35_27b_6bit,Qwen3.5-27B-6bit,mlx_lm,9/12,0.75,2.79,39/44,0.8864,4.06,37/42,0.881,8.36,0.8391
-qwen35_35b_a3b,Qwen3.5-35B-A3B,mlx_lm,9/12,0.75,0.73,31/44,0.7045,1.02,39/42,0.9286,4.12,0.7944
+gemma4_31b,Gemma-4-31B (4bit),mlx_vlm,12/12,1.0,4.47,42/44,0.9545,4.86,39/42,0.9286,10.64,0.961
+qwen35_27b_opus_distilled,Qwen3.5-27B Claude-4.6 Opus Distilled (4bit),mlx_lm,12/12,1.0,19.38,37/44,0.8409,23.73,38/42,0.9048,23.89,0.9152
+gemma4_26b_a4b,Gemma-4-26B-A4B (4bit),mlx_vlm,10/12,0.8333,1.5,42/44,0.9545,1.97,32/42,0.7619,2.5,0.8499
+qwen35_27b_6bit,Qwen3.5-27B (6bit),mlx_lm,9/12,0.75,2.79,39/44,0.8864,4.06,37/42,0.881,8.36,0.8391
+qwen35_35b_a3b,Qwen3.5-35B-A3B (4bit),mlx_lm,9/12,0.75,0.73,31/44,0.7045,1.02,39/42,0.9286,4.12,0.7944

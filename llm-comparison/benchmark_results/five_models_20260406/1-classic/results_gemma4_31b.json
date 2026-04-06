@@ -1,7 +1,7 @@
 [
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -23,7 +23,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -45,7 +45,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -67,7 +67,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -89,7 +89,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -111,7 +111,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -133,7 +133,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -155,7 +155,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -177,7 +177,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -199,7 +199,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -221,7 +221,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
@@ -243,7 +243,7 @@
   },
   {
     "model_id": "gemma4_31b",
-    "model_label": "Gemma-4-31B",
+    "model_label": "Gemma-4-31B (4bit)",
     "model": "mlx-community/gemma-4-31b-it-4bit",
     "backend": "mlx_vlm",
     "enable_thinking": false,
