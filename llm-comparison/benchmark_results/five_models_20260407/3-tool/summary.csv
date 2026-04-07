@@ -1,0 +1,6 @@
+model_id,model_label,model,backend,enable_thinking,total_score,total_max_score,score_rate,full_score_count,avg_latency_sec,avg_tool_calls_per_task,tool_call_success_rate,end_to_end_success_rate,recovery_rate,avg_prefill_sec,avg_generation_tps,weighted_prompt_tps
+qwen35_35b_a3b,Qwen3.5-35B-A3B (4bit),mlx-community/Qwen3.5-35B-A3B-4bit,mlx_lm,False,39,42,0.9286,6,3.21,1.5,0.9167,0.875,1.0,2.188,95.9391,413.9078
+gemma4_31b,Gemma-4-31B (4bit),mlx-community/gemma-4-31b-it-4bit,mlx_vlm,False,39,42,0.9286,6,10.21,1.75,0.7857,0.875,1.0,6.7541,24.0786,165.7145
+qwen35_27b_opus_distilled,Qwen3.5-27B Claude-4.6 Opus Distilled (4bit),mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit,mlx_lm,False,38,42,0.9048,5,21.7,1.625,0.8462,0.875,1.0,4.624,27.9225,211.0991
+qwen35_27b_6bit,Qwen3.5-27B (6bit),mlx-community/Qwen3.5-27B-6bit,mlx_lm,False,37,42,0.881,6,11.28,1.5,0.8333,0.75,1.0,7.7071,20.7041,117.0344
+gemma4_26b_a4b,Gemma-4-26B-A4B (4bit),mlx-community/gemma-4-26b-a4b-it-4bit,mlx_vlm,False,34,42,0.8095,5,3.3,1.375,0.8182,0.875,1.0,2.5627,90.7807,354.9496

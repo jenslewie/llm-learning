@@ -37,8 +37,6 @@
   - 已整理的 5 模型结果包
 - `notebook/`
   - 参考 notebook 与早期 notebook 样例结果
-- `obsolete/`
-  - 已被整理包替代的旧结果与旧评分文件
 
 ## 模型配置
 

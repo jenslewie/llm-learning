@@ -1,0 +1,6 @@
+model_id,model_label,model,backend,enable_thinking,auto_scored_questions,correct_count,full_score_count,objective_score_sum,objective_max_score,objective_score_rate,avg_latency_sec,avg_final_pred_len,avg_prefill_sec,avg_generation_tps,cold_start_qid,cold_start_prefill_sec,cold_start_prompt_tps,steady_state_avg_prefill_sec,steady_state_avg_prompt_tps,steady_state_avg_generation_tps,weighted_prompt_tps
+gemma4_31b,Gemma-4-31B (4bit),mlx-community/gemma-4-31b-it-4bit,mlx_vlm,False,12,12,12,12,12,1.0,4.9,15.9,1.157,23.5397,q1,3.513,34.7281,0.9428,140.2661,23.5543,113.2271
+qwen35_27b_opus_distilled,Qwen3.5-27B Claude-4.6 Opus Distilled (4bit),mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit,mlx_lm,False,12,12,12,12,12,1.0,18.83,8.7,0.7491,27.8558,q1,1.3589,90.512,0.6936,186.1902,27.8358,171.3205
+gemma4_26b_a4b,Gemma-4-26B-A4B (4bit),mlx-community/gemma-4-26b-a4b-it-4bit,mlx_vlm,False,12,10,10,10,12,0.8333,2.55,10.0,1.2555,89.2895,q1,13.0708,9.3338,0.1814,725.1442,89.6066,104.3367
+qwen35_35b_a3b,Qwen3.5-35B-A3B (4bit),mlx-community/Qwen3.5-35B-A3B-4bit,mlx_lm,False,12,9,9,9,12,0.75,2.52,5.9,2.0065,103.1108,q1,22.2545,5.5719,0.1657,781.6919,103.8889,64.4583
+qwen35_27b_6bit,Qwen3.5-27B (6bit),mlx-community/Qwen3.5-27B-6bit,mlx_lm,False,12,9,9,9,12,0.75,5.12,8.5,3.1698,20.8453,q1,29.9733,4.137,0.7331,177.2136,20.8294,40.8018

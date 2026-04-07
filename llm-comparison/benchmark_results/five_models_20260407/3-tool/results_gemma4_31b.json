@@ -1,0 +1,1013 @@
+[
+  {
+    "model_id": "gemma4_31b",
+    "model_label": "Gemma-4-31B (4bit)",
+    "model": "mlx-community/gemma-4-31b-it-4bit",
+    "backend": "mlx_vlm",
+    "enable_thinking": false,
+    "qid": "tq01",
+    "category": "calculator",
+    "task": "使用计算器工具计算 (287 * 913 - 17451) / 7，并只输出最终数字。",
+    "allowed_tools": [
+      "calculator"
+    ],
+    "expected_tool_sequence": [
+      "calculator"
+    ],
+    "gold": "34940",
+    "gold_keywords": null,
+    "gold_json": null,
+    "final_pred": "34940",
+    "tool_trace": [
+      {
+        "tool_name": "calculator",
+        "arguments": {
+          "expression": "(287 * 913 - 17451) / 7"
+        },
+        "call_started_at": 1775524091.682414,
+        "call_finished_at": 1775524091.682452,
+        "latency_sec": 0.0,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"result\": 34940}"
+      }
+    ],
+    "raw_steps": [
+      {
+        "step": 1,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"calculator\",\"arguments\":{\"expression\":\"(287 * 913 - 17451) / 7\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "calculator",
+          "arguments": {
+            "expression": "(287 * 913 - 17451) / 7"
+          }
+        },
+        "latency_sec": 5.8,
+        "prompt_tokens": 261,
+        "generation_tokens": 37,
+        "prompt_tps": 61.7933,
+        "generation_tps": 23.6258,
+        "prefill_sec": 4.2238,
+        "decode_sec": 1.5661,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 2,
+        "assistant_text": "{\"action\":\"final\",\"final_answer\":\"34940\"}",
+        "action": {
+          "action": "final",
+          "final_answer": "34940"
+        },
+        "latency_sec": 2.66,
+        "prompt_tokens": 353,
+        "generation_tokens": 16,
+        "prompt_tps": 175.6377,
+        "generation_tps": 24.9609,
+        "prefill_sec": 2.0098,
+        "decode_sec": 0.641,
+        "peak_memory_gb": 22.9417
+      }
+    ],
+    "latency_sec": 8.46,
+    "tool_call_count": 1,
+    "successful_tool_calls": 1,
+    "prompt_tokens": 614,
+    "generation_tokens": 53,
+    "prefill_sec": 6.2336,
+    "decode_sec": 2.2071,
+    "prompt_tps": 98.4985,
+    "generation_tps": 24.0134,
+    "peak_memory_gb": 22.9417,
+    "score": 5,
+    "max_score": 5,
+    "tool_trace_tools": [
+      "calculator"
+    ],
+    "subscores": {
+      "used_expected_tool": 1,
+      "parameter_valid": 1,
+      "tool_call_success": 1,
+      "final_answer_correct": 2
+    },
+    "full_score": 1,
+    "end_to_end_success": 1
+  },
+  {
+    "model_id": "gemma4_31b",
+    "model_label": "Gemma-4-31B (4bit)",
+    "model": "mlx-community/gemma-4-31b-it-4bit",
+    "backend": "mlx_vlm",
+    "enable_thinking": false,
+    "qid": "tq02",
+    "category": "file_search",
+    "task": "在本地项目目录里找到包含字符串 PAYMENT_TIMEOUT_MS 的配置文件，并输出它所在文件路径与对应值。",
+    "allowed_tools": [
+      "file_search",
+      "file_read"
+    ],
+    "expected_tool_sequence": [
+      "file_search",
+      "file_read"
+    ],
+    "gold": null,
+    "gold_keywords": [
+      "config/app.env",
+      "15000"
+    ],
+    "gold_json": null,
+    "final_pred": "文件路径为 config/app.env，对应值为 15000。",
+    "tool_trace": [
+      {
+        "tool_name": "file_search",
+        "arguments": {
+          "query": "PAYMENT_TIMEOUT_MS"
+        },
+        "call_started_at": 1775524097.064746,
+        "call_finished_at": 1775524097.066635,
+        "latency_sec": 0.0019,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"matches\": [\"config/app.env\"]}"
+      },
+      {
+        "tool_name": "file_read",
+        "arguments": {
+          "path": "config/app.env"
+        },
+        "call_started_at": 1775524100.246314,
+        "call_finished_at": 1775524100.246523,
+        "latency_sec": 0.0002,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"path\": \"config/app.env\", \"content\": \"APP_ENV=staging\\nPAYMENT_TIMEOUT_MS=15000\\nPAYMENT_RETRY_LIMIT=3\\n\"}"
+      }
+    ],
+    "raw_steps": [
+      {
+        "step": 1,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"file_search\",\"arguments\":{\"query\":\"PAYMENT_TIMEOUT_MS\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "file_search",
+          "arguments": {
+            "query": "PAYMENT_TIMEOUT_MS"
+          }
+        },
+        "latency_sec": 2.72,
+        "prompt_tokens": 309,
+        "generation_tokens": 25,
+        "prompt_tps": 182.0441,
+        "generation_tps": 24.5959,
+        "prefill_sec": 1.6974,
+        "decode_sec": 1.0164,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 2,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"file_read\",\"arguments\":{\"path\":\"config/app.env\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "file_read",
+          "arguments": {
+            "path": "config/app.env"
+          }
+        },
+        "latency_sec": 3.18,
+        "prompt_tokens": 392,
+        "generation_tokens": 24,
+        "prompt_tps": 178.8325,
+        "generation_tps": 24.5117,
+        "prefill_sec": 2.192,
+        "decode_sec": 0.9791,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 3,
+        "assistant_text": "{\"action\":\"final\",\"final_answer\":\"文件路径为 config/app.env，对应值为 15000。\"}",
+        "action": {
+          "action": "final",
+          "final_answer": "文件路径为 config/app.env，对应值为 15000。"
+        },
+        "latency_sec": 3.97,
+        "prompt_tokens": 510,
+        "generation_tokens": 29,
+        "prompt_tps": 184.4821,
+        "generation_tps": 24.1764,
+        "prefill_sec": 2.7645,
+        "decode_sec": 1.1995,
+        "peak_memory_gb": 22.9417
+      }
+    ],
+    "latency_sec": 9.87,
+    "tool_call_count": 2,
+    "successful_tool_calls": 2,
+    "prompt_tokens": 1211,
+    "generation_tokens": 78,
+    "prefill_sec": 6.6539,
+    "decode_sec": 3.195,
+    "prompt_tps": 181.9985,
+    "generation_tps": 24.4131,
+    "peak_memory_gb": 22.9417,
+    "score": 5,
+    "max_score": 5,
+    "tool_trace_tools": [
+      "file_search",
+      "file_read"
+    ],
+    "subscores": {
+      "tool_sequence_reasonable": 1,
+      "parameter_valid": 1,
+      "tool_result_used_correctly": 1,
+      "final_answer_correct": 2
+    },
+    "full_score": 1,
+    "end_to_end_success": 1
+  },
+  {
+    "model_id": "gemma4_31b",
+    "model_label": "Gemma-4-31B (4bit)",
+    "model": "mlx-community/gemma-4-31b-it-4bit",
+    "backend": "mlx_vlm",
+    "enable_thinking": false,
+    "qid": "tq03",
+    "category": "structured_data",
+    "task": "调用 JSON 查询工具，从订单列表中找出 status 为 delayed 且 amount 最大的一笔订单，只输出订单号。",
+    "allowed_tools": [
+      "json_query"
+    ],
+    "expected_tool_sequence": [
+      "json_query"
+    ],
+    "gold": "ORD-9003",
+    "gold_keywords": null,
+    "gold_json": null,
+    "final_pred": "ORD-9003",
+    "tool_trace": [
+      {
+        "tool_name": "json_query",
+        "arguments": {
+          "dataset": "orders",
+          "filters": {
+            "status": "delayed"
+          },
+          "sort_by": "amount",
+          "sort_order": "desc",
+          "limit": 1
+        },
+        "call_started_at": 1775524107.542185,
+        "call_finished_at": 1775524107.5422,
+        "latency_sec": 0.0,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"rows\": [{\"order_id\": \"ORD-9003\", \"status\": \"delayed\", \"amount\": 24400}]}"
+      }
+    ],
+    "raw_steps": [
+      {
+        "step": 1,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"json_query\",\"arguments\":{\"dataset\":\"orders\",\"filters\":{\"status\":\"delayed\"},\"sort_by\":\"amount\",\"sort_order\":\"desc\",\"limit\":1}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "json_query",
+          "arguments": {
+            "dataset": "orders",
+            "filters": {
+              "status": "delayed"
+            },
+            "sort_by": "amount",
+            "sort_order": "desc",
+            "limit": 1
+          }
+        },
+        "latency_sec": 3.32,
+        "prompt_tokens": 272,
+        "generation_tokens": 43,
+        "prompt_tps": 176.8274,
+        "generation_tps": 24.2039,
+        "prefill_sec": 1.5382,
+        "decode_sec": 1.7766,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 2,
+        "assistant_text": "{\"action\":\"final\",\"final_answer\":\"ORD-9003\"}",
+        "action": {
+          "action": "final",
+          "final_answer": "ORD-9003"
+        },
+        "latency_sec": 2.95,
+        "prompt_tokens": 395,
+        "generation_tokens": 17,
+        "prompt_tps": 174.8183,
+        "generation_tps": 24.9523,
+        "prefill_sec": 2.2595,
+        "decode_sec": 0.6813,
+        "peak_memory_gb": 22.9417
+      }
+    ],
+    "latency_sec": 6.27,
+    "tool_call_count": 1,
+    "successful_tool_calls": 1,
+    "prompt_tokens": 667,
+    "generation_tokens": 60,
+    "prefill_sec": 3.7977,
+    "decode_sec": 2.4579,
+    "prompt_tps": 175.6326,
+    "generation_tps": 24.4111,
+    "peak_memory_gb": 22.9417,
+    "score": 5,
+    "max_score": 5,
+    "tool_trace_tools": [
+      "json_query"
+    ],
+    "subscores": {
+      "used_expected_tool": 1,
+      "parameter_valid": 1,
+      "tool_call_success": 1,
+      "final_answer_correct": 2
+    },
+    "full_score": 1,
+    "end_to_end_success": 1
+  },
+  {
+    "model_id": "gemma4_31b",
+    "model_label": "Gemma-4-31B (4bit)",
+    "model": "mlx-community/gemma-4-31b-it-4bit",
+    "backend": "mlx_vlm",
+    "enable_thinking": false,
+    "qid": "tq04",
+    "category": "api_lookup",
+    "task": "调用 mock API 查询工单 T-1042 的状态，并根据返回结果写一句不超过 30 字的中文进展说明。",
+    "allowed_tools": [
+      "http_request"
+    ],
+    "expected_tool_sequence": [
+      "http_request"
+    ],
+    "gold": null,
+    "gold_keywords": [
+      "T-1042",
+      "阻塞"
+    ],
+    "gold_json": null,
+    "final_pred": "工单T-1042目前处于阻塞状态，正等待上游支付渠道修复。",
+    "tool_trace": [
+      {
+        "tool_name": "http_request",
+        "arguments": {
+          "ticket_id": "T-1042"
+        },
+        "call_started_at": 1775524113.1854951,
+        "call_finished_at": 1775524113.185498,
+        "latency_sec": 0.0,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"ticket_id\": \"T-1042\", \"status\": \"blocked\", \"owner\": \"payments\", \"summary\": \"等待上游支付渠道修复\", \"eta\": \"2026-04-07\"}"
+      }
+    ],
+    "raw_steps": [
+      {
+        "step": 1,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"http_request\",\"arguments\":{\"ticket_id\":\"T-1042\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "http_request",
+          "arguments": {
+            "ticket_id": "T-1042"
+          }
+        },
+        "latency_sec": 2.69,
+        "prompt_tokens": 270,
+        "generation_tokens": 27,
+        "prompt_tps": 170.1636,
+        "generation_tps": 24.577,
+        "prefill_sec": 1.5867,
+        "decode_sec": 1.0986,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 2,
+        "assistant_text": "{\"action\":\"final\",\"final_answer\":\"工单T-1042目前处于阻塞状态，正等待上游支付渠道修复。\"}",
+        "action": {
+          "action": "final",
+          "final_answer": "工单T-1042目前处于阻塞状态，正等待上游支付渠道修复。"
+        },
+        "latency_sec": 3.59,
+        "prompt_tokens": 395,
+        "generation_tokens": 32,
+        "prompt_tps": 175.1608,
+        "generation_tps": 24.1984,
+        "prefill_sec": 2.2551,
+        "decode_sec": 1.3224,
+        "peak_memory_gb": 22.9417
+      }
+    ],
+    "latency_sec": 6.28,
+    "tool_call_count": 1,
+    "successful_tool_calls": 1,
+    "prompt_tokens": 665,
+    "generation_tokens": 59,
+    "prefill_sec": 3.8418,
+    "decode_sec": 2.421,
+    "prompt_tps": 173.0959,
+    "generation_tps": 24.3701,
+    "peak_memory_gb": 22.9417,
+    "score": 5,
+    "max_score": 5,
+    "tool_trace_tools": [
+      "http_request"
+    ],
+    "subscores": {
+      "tool_sequence_reasonable": 1,
+      "parameter_valid": 1,
+      "tool_result_used_correctly": 1,
+      "final_answer_correct": 2
+    },
+    "full_score": 1,
+    "end_to_end_success": 1
+  },
+  {
+    "model_id": "gemma4_31b",
+    "model_label": "Gemma-4-31B (4bit)",
+    "model": "mlx-community/gemma-4-31b-it-4bit",
+    "backend": "mlx_vlm",
+    "enable_thinking": false,
+    "qid": "tq05",
+    "category": "multi_step",
+    "task": "先读取项目配置中的数据库连接信息，再调用数据库查询工具统计昨日新增用户数，最后输出一个 JSON：{\"db\":\"...\",\"new_users\":数字}。",
+    "allowed_tools": [
+      "file_read",
+      "db_query"
+    ],
+    "expected_tool_sequence": [
+      "file_read",
+      "db_query"
+    ],
+    "gold": null,
+    "gold_keywords": null,
+    "gold_json": {
+      "db": "analytics",
+      "new_users": 128
+    },
+    "final_pred": "{\"db\":\"analytics\",\"new_users\":128}",
+    "tool_trace": [
+      {
+        "tool_name": "file_read",
+        "arguments": {
+          "path": "config/app.env"
+        },
+        "call_started_at": 1775524119.5146081,
+        "call_finished_at": 1775524119.514818,
+        "latency_sec": 0.0002,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"path\": \"config/app.env\", \"content\": \"APP_ENV=staging\\nPAYMENT_TIMEOUT_MS=15000\\nPAYMENT_RETRY_LIMIT=3\\n\"}"
+      },
+      {
+        "tool_name": "db_query",
+        "arguments": {
+          "db": "analytics",
+          "metric": "new_users",
+          "date": "2025-05-13"
+        },
+        "call_started_at": 1775524123.5953732,
+        "call_finished_at": 1775524123.595378,
+        "latency_sec": 0.0,
+        "success": false,
+        "error_message": "No data for date",
+        "output_excerpt": ""
+      },
+      {
+        "tool_name": "db_query",
+        "arguments": {
+          "db": "analytics",
+          "metric": "new_users",
+          "date": "2026-04-04"
+        },
+        "call_started_at": 1775524128.2424588,
+        "call_finished_at": 1775524128.242468,
+        "latency_sec": 0.0,
+        "success": false,
+        "error_message": "No data for date",
+        "output_excerpt": ""
+      },
+      {
+        "tool_name": "db_query",
+        "arguments": {
+          "db": "analytics",
+          "metric": "new_users",
+          "date": "2026-04-05"
+        },
+        "call_started_at": 1775524133.410571,
+        "call_finished_at": 1775524133.410573,
+        "latency_sec": 0.0,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"db\": \"analytics\", \"metric\": \"new_users\", \"date\": \"2026-04-05\", \"value\": 128}"
+      }
+    ],
+    "raw_steps": [
+      {
+        "step": 1,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"file_read\",\"arguments\":{\"path\":\"config/app.env\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "file_read",
+          "arguments": {
+            "path": "config/app.env"
+          }
+        },
+        "latency_sec": 2.74,
+        "prompt_tokens": 318,
+        "generation_tokens": 24,
+        "prompt_tps": 181.0891,
+        "generation_tps": 24.5344,
+        "prefill_sec": 1.756,
+        "decode_sec": 0.9782,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 2,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"db_query\",\"arguments\":{\"db\":\"analytics\",\"metric\":\"new_users\",\"date\":\"2025-05-13\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "db_query",
+          "arguments": {
+            "db": "analytics",
+            "metric": "new_users",
+            "date": "2025-05-13"
+          }
+        },
+        "latency_sec": 4.08,
+        "prompt_tokens": 436,
+        "generation_tokens": 39,
+        "prompt_tps": 178.1193,
+        "generation_tps": 24.0119,
+        "prefill_sec": 2.4478,
+        "decode_sec": 1.6242,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 3,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"db_query\",\"arguments\":{\"db\":\"analytics\",\"metric\":\"new_users\",\"date\":\"2026-04-04\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "db_query",
+          "arguments": {
+            "db": "analytics",
+            "metric": "new_users",
+            "date": "2026-04-04"
+          }
+        },
+        "latency_sec": 4.65,
+        "prompt_tokens": 529,
+        "generation_tokens": 39,
+        "prompt_tps": 176.1755,
+        "generation_tps": 23.8529,
+        "prefill_sec": 3.0027,
+        "decode_sec": 1.635,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 4,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"db_query\",\"arguments\":{\"db\":\"analytics\",\"metric\":\"new_users\",\"date\":\"2026-04-05\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "db_query",
+          "arguments": {
+            "db": "analytics",
+            "metric": "new_users",
+            "date": "2026-04-05"
+          }
+        },
+        "latency_sec": 5.17,
+        "prompt_tokens": 622,
+        "generation_tokens": 39,
+        "prompt_tps": 176.9497,
+        "generation_tps": 23.7407,
+        "prefill_sec": 3.5151,
+        "decode_sec": 1.6427,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 5,
+        "assistant_text": "{\"action\":\"final\",\"final_answer\":\"{\\\"db\\\":\\\"analytics\\\",\\\"new_users\\\":128}\"}",
+        "action": {
+          "action": "final",
+          "final_answer": "{\"db\":\"analytics\",\"new_users\":128}"
+        },
+        "latency_sec": 5.24,
+        "prompt_tokens": 745,
+        "generation_tokens": 24,
+        "prompt_tps": 176.0783,
+        "generation_tps": 23.9758,
+        "prefill_sec": 4.2311,
+        "decode_sec": 1.001,
+        "peak_memory_gb": 22.9417
+      }
+    ],
+    "latency_sec": 21.88,
+    "tool_call_count": 4,
+    "successful_tool_calls": 2,
+    "prompt_tokens": 2650,
+    "generation_tokens": 165,
+    "prefill_sec": 14.9527,
+    "decode_sec": 6.8811,
+    "prompt_tps": 177.2255,
+    "generation_tps": 23.9787,
+    "peak_memory_gb": 22.9417,
+    "score": 5,
+    "max_score": 6,
+    "tool_trace_tools": [
+      "file_read",
+      "db_query",
+      "db_query",
+      "db_query"
+    ],
+    "subscores": {
+      "tool_sequence_reasonable": 1,
+      "parameter_valid": 0,
+      "json_valid": 1,
+      "json_fields_complete": 1,
+      "content_correct": 2
+    },
+    "full_score": 0,
+    "end_to_end_success": 1
+  },
+  {
+    "model_id": "gemma4_31b",
+    "model_label": "Gemma-4-31B (4bit)",
+    "model": "mlx-community/gemma-4-31b-it-4bit",
+    "backend": "mlx_vlm",
+    "enable_thinking": false,
+    "qid": "tq06",
+    "category": "recovery",
+    "task": "这是一个失败恢复题。你第一次调用工具时，日期字段名会出错并导致失败；请根据错误信息修正参数，然后重新获取 2026-04-01 的销售额，只输出数字。",
+    "allowed_tools": [
+      "sales_report_api"
+    ],
+    "expected_tool_sequence": [
+      "sales_report_api",
+      "sales_report_api"
+    ],
+    "gold": "128700",
+    "gold_keywords": null,
+    "gold_json": null,
+    "final_pred": "128700",
+    "tool_trace": [
+      {
+        "tool_name": "sales_report_api",
+        "arguments": {
+          "day": "2026-04-01"
+        },
+        "call_started_at": 1775524141.547141,
+        "call_finished_at": 1775524141.547147,
+        "latency_sec": 0.0,
+        "success": false,
+        "error_message": "Missing required parameter: date",
+        "output_excerpt": "",
+        "injection_meta": {
+          "injected": true,
+          "reason": "force_first_tool_argument_error",
+          "model_arguments": {
+            "day": "2026-04-01"
+          },
+          "executed_arguments": {
+            "day": "2026-04-01"
+          }
+        }
+      },
+      {
+        "tool_name": "sales_report_api",
+        "arguments": {
+          "date": "2026-04-01"
+        },
+        "call_started_at": 1775524145.064242,
+        "call_finished_at": 1775524145.064245,
+        "latency_sec": 0.0,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"date\": \"2026-04-01\", \"revenue\": 128700}"
+      }
+    ],
+    "raw_steps": [
+      {
+        "step": 1,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"sales_report_api\",\"arguments\":{\"day\":\"2026-04-01\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "sales_report_api",
+          "arguments": {
+            "day": "2026-04-01"
+          }
+        },
+        "latency_sec": 2.9,
+        "prompt_tokens": 278,
+        "generation_tokens": 31,
+        "prompt_tps": 174.5273,
+        "generation_tps": 23.9472,
+        "prefill_sec": 1.5929,
+        "decode_sec": 1.2945,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 2,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"sales_report_api\",\"arguments\":{\"date\":\"2026-04-01\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "sales_report_api",
+          "arguments": {
+            "date": "2026-04-01"
+          }
+        },
+        "latency_sec": 3.52,
+        "prompt_tokens": 366,
+        "generation_tokens": 31,
+        "prompt_tps": 166.32,
+        "generation_tps": 23.7091,
+        "prefill_sec": 2.2006,
+        "decode_sec": 1.3075,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 3,
+        "assistant_text": "{\"action\":\"final\",\"final_answer\":\"128700\"}",
+        "action": {
+          "action": "final",
+          "final_answer": "128700"
+        },
+        "latency_sec": 3.45,
+        "prompt_tokens": 472,
+        "generation_tokens": 17,
+        "prompt_tps": 171.9079,
+        "generation_tps": 24.3557,
+        "prefill_sec": 2.7457,
+        "decode_sec": 0.698,
+        "peak_memory_gb": 22.9417
+      }
+    ],
+    "latency_sec": 9.87,
+    "tool_call_count": 2,
+    "successful_tool_calls": 1,
+    "prompt_tokens": 1116,
+    "generation_tokens": 79,
+    "prefill_sec": 6.5392,
+    "decode_sec": 3.3,
+    "prompt_tps": 170.6631,
+    "generation_tps": 23.9394,
+    "peak_memory_gb": 22.9417,
+    "score": 6,
+    "max_score": 6,
+    "tool_trace_tools": [
+      "sales_report_api",
+      "sales_report_api"
+    ],
+    "subscores": {
+      "attempted_tool_call": 1,
+      "recognized_failure": 1,
+      "recovered_with_correct_params": 2,
+      "final_answer_correct": 2
+    },
+    "full_score": 1,
+    "end_to_end_success": 1
+  },
+  {
+    "model_id": "gemma4_31b",
+    "model_label": "Gemma-4-31B (4bit)",
+    "model": "mlx-community/gemma-4-31b-it-4bit",
+    "backend": "mlx_vlm",
+    "enable_thinking": false,
+    "qid": "tq07",
+    "category": "selection",
+    "task": "判断下面任务是否必须使用工具：'把 9973 是否为质数判断出来。' 若需要请调用工具；若不需要请直接回答，并说明原因。",
+    "allowed_tools": [
+      "calculator",
+      "python_runner"
+    ],
+    "expected_tool_sequence": [],
+    "gold": null,
+    "gold_keywords": [
+      "质数"
+    ],
+    "gold_json": null,
+    "final_pred": "9973 是一个质数。",
+    "tool_trace": [
+      {
+        "tool_name": "python_runner",
+        "arguments": {
+          "task": "primality_check",
+          "n": 9973
+        },
+        "call_started_at": 1775524151.735744,
+        "call_finished_at": 1775524151.7357519,
+        "latency_sec": 0.0,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"n\": 9973, \"is_prime\": true}"
+      }
+    ],
+    "raw_steps": [
+      {
+        "step": 1,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"python_runner\",\"arguments\":{\"task\":\"primality_check\",\"n\":9973}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "python_runner",
+          "arguments": {
+            "task": "primality_check",
+            "n": 9973
+          }
+        },
+        "latency_sec": 3.22,
+        "prompt_tokens": 327,
+        "generation_tokens": 30,
+        "prompt_tps": 167.2819,
+        "generation_tps": 23.8979,
+        "prefill_sec": 1.9548,
+        "decode_sec": 1.2553,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 2,
+        "assistant_text": "{\"action\":\"final\",\"final_answer\":\"9973 是一个质数。\"}",
+        "action": {
+          "action": "final",
+          "final_answer": "9973 是一个质数。"
+        },
+        "latency_sec": 3.36,
+        "prompt_tokens": 420,
+        "generation_tokens": 20,
+        "prompt_tps": 166.6017,
+        "generation_tps": 24.0693,
+        "prefill_sec": 2.521,
+        "decode_sec": 0.8309,
+        "peak_memory_gb": 22.9417
+      }
+    ],
+    "latency_sec": 6.58,
+    "tool_call_count": 1,
+    "successful_tool_calls": 1,
+    "prompt_tokens": 747,
+    "generation_tokens": 50,
+    "prefill_sec": 4.4758,
+    "decode_sec": 2.0862,
+    "prompt_tps": 166.8975,
+    "generation_tps": 23.967,
+    "peak_memory_gb": 22.9417,
+    "score": 3,
+    "max_score": 5,
+    "tool_trace_tools": [
+      "python_runner"
+    ],
+    "subscores": {
+      "judged_need_for_tool_correctly": 0,
+      "if_used_tool_then_reasonable": 1,
+      "final_answer_correct": 2
+    },
+    "full_score": 0,
+    "end_to_end_success": 1
+  },
+  {
+    "model_id": "gemma4_31b",
+    "model_label": "Gemma-4-31B (4bit)",
+    "model": "mlx-community/gemma-4-31b-it-4bit",
+    "backend": "mlx_vlm",
+    "enable_thinking": false,
+    "qid": "tq08",
+    "category": "reporting",
+    "task": "调用搜索工具查找三个日志文件中的 error 数量，再生成一段两句中文总结，指出哪个文件最严重。",
+    "allowed_tools": [
+      "file_search",
+      "log_counter"
+    ],
+    "expected_tool_sequence": [
+      "file_search",
+      "log_counter"
+    ],
+    "gold": null,
+    "gold_keywords": [
+      "web.log",
+      "3",
+      "最严重"
+    ],
+    "gold_json": null,
+    "final_pred": "三个日志文件中的 error 数量分别为：api.log 2次，web.log 3次，worker.log 1次。其中 web.log 的错误次数最多，情况最严重。",
+    "tool_trace": [
+      {
+        "tool_name": "file_search",
+        "arguments": {
+          "pattern": "*.log"
+        },
+        "call_started_at": 1775524157.938533,
+        "call_finished_at": 1775524157.938949,
+        "latency_sec": 0.0004,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"matches\": [\"logs/api.log\", \"logs/web.log\", \"logs/worker.log\"]}"
+      },
+      {
+        "tool_name": "log_counter",
+        "arguments": {
+          "paths": [
+            "logs/api.log",
+            "logs/web.log",
+            "logs/worker.log"
+          ],
+          "term": "error"
+        },
+        "call_started_at": 1775524162.1357598,
+        "call_finished_at": 1775524162.13621,
+        "latency_sec": 0.0005,
+        "success": true,
+        "error_message": "",
+        "output_excerpt": "{\"counts\": {\"logs/api.log\": 2, \"logs/web.log\": 3, \"logs/worker.log\": 1}}"
+      }
+    ],
+    "raw_steps": [
+      {
+        "step": 1,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"file_search\",\"arguments\":{\"pattern\":\"*.log\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "file_search",
+          "arguments": {
+            "pattern": "*.log"
+          }
+        },
+        "latency_sec": 2.84,
+        "prompt_tokens": 326,
+        "generation_tokens": 21,
+        "prompt_tps": 165.9191,
+        "generation_tps": 24.2192,
+        "prefill_sec": 1.9648,
+        "decode_sec": 0.8671,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 2,
+        "assistant_text": "{\"action\":\"tool\",\"tool_name\":\"log_counter\",\"arguments\":{\"paths\":[\"logs/api.log\",\"logs/web.log\",\"logs/worker.log\"],\"term\":\"error\"}}",
+        "action": {
+          "action": "tool",
+          "tool_name": "log_counter",
+          "arguments": {
+            "paths": [
+              "logs/api.log",
+              "logs/web.log",
+              "logs/worker.log"
+            ],
+            "term": "error"
+          }
+        },
+        "latency_sec": 4.2,
+        "prompt_tokens": 419,
+        "generation_tokens": 40,
+        "prompt_tps": 168.1568,
+        "generation_tps": 23.5812,
+        "prefill_sec": 2.4917,
+        "decode_sec": 1.6963,
+        "peak_memory_gb": 22.9417
+      },
+      {
+        "step": 3,
+        "assistant_text": "{\"action\":\"final\",\"final_answer\":\"三个日志文件中的 error 数量分别为：api.log 2次，web.log 3次，worker.log 1次。其中 web.log 的错误次数最多，情况最严重。\"}",
+        "action": {
+          "action": "final",
+          "final_answer": "三个日志文件中的 error 数量分别为：api.log 2次，web.log 3次，worker.log 1次。其中 web.log 的错误次数最多，情况最严重。"
+        },
+        "latency_sec": 5.41,
+        "prompt_tokens": 539,
+        "generation_tokens": 54,
+        "prompt_tps": 174.9127,
+        "generation_tps": 23.2483,
+        "prefill_sec": 3.0815,
+        "decode_sec": 2.3227,
+        "peak_memory_gb": 22.9417
+      }
+    ],
+    "latency_sec": 12.45,
+    "tool_call_count": 2,
+    "successful_tool_calls": 2,
+    "prompt_tokens": 1284,
+    "generation_tokens": 115,
+    "prefill_sec": 7.538,
+    "decode_sec": 4.8861,
+    "prompt_tps": 170.337,
+    "generation_tps": 23.5362,
+    "peak_memory_gb": 22.9417,
+    "score": 5,
+    "max_score": 5,
+    "tool_trace_tools": [
+      "file_search",
+      "log_counter"
+    ],
+    "subscores": {
+      "used_required_tools": 1,
+      "counts_correct": 2,
+      "summary_uses_tool_results": 1,
+      "report_clear": 1
+    },
+    "full_score": 1,
+    "end_to_end_success": 0
+  }
+]

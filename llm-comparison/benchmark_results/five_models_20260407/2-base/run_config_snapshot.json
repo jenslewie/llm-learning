@@ -1,0 +1,14 @@
+{
+  "config_path": "/Users/jenslewie/github/llm-learning/llm-comparison/config/models_config.json",
+  "questions_path": "/Users/jenslewie/github/llm-learning/llm-comparison/benchmarks/questions/base_questions.json",
+  "question_set_name": "base_benchmark_draft",
+  "question_set_version": "v1",
+  "selected_model_ids": [
+    "qwen35_27b_opus_distilled",
+    "qwen35_35b_a3b",
+    "qwen35_27b_6bit",
+    "gemma4_26b_a4b",
+    "gemma4_31b"
+  ],
+  "generated_at": "2026-04-07T09:17:03"
+}
